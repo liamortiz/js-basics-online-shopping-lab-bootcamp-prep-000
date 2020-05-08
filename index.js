@@ -21,10 +21,11 @@ function viewCart() {
   if (cart.length === 0) {
     return "Your shopping cart is empty."
   }
-  let msg = "In your cart, you have"
-  msg += cart.map(item => ` ${item.itemName} at $${item.itemPrice}`).join()
+  if (cart.length === 1) {
+    return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.`
+  }
   
-  //Find the last comma and add the world "and" to it.
+  let msg = "In your cart, you have" + cart.map(item => ` ${item.itemName} at $${item.itemPrice}`).join()
   let index = msg.lastIndexOf(",")
   return `${msg.substring(0, index + 1)} and ${msg.substring(index + 2)}.`
 }
