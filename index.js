@@ -25,10 +25,10 @@ function viewCart() {
     return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.`
   }
   
-  let msg = "In your cart, you have" + cart.map(item => ` ${item.itemName} at $${item.itemPrice}`).join()
-  
+  let msg = cart.map(item => ` ${item.itemName} at $${item.itemPrice}`).join()
   let index = msg.lastIndexOf(",")
-  return `${msg.substring(0, index + 1)} and ${msg.substring(index + 2)}.`
+  
+  return `In your cart, you have${msg.substring(0, index + 1)} and ${msg.substring(index + 2)}.`
 }
 
 function total() {
