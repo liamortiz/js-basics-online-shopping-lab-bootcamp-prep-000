@@ -26,6 +26,7 @@ function viewCart() {
   }
   
   let msg = "In your cart, you have" + cart.map(item => ` ${item.itemName} at $${item.itemPrice}`).join()
+  
   let index = msg.lastIndexOf(",")
   return `${msg.substring(0, index + 1)} and ${msg.substring(index + 2)}.`
 }
